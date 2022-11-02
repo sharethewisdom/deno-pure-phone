@@ -1,52 +1,17 @@
-# deno_starter
+# Pure library for deno
 
-Quickly start a Deno module.
+Library for deno to enable communication with Mudita Pure phone(s) through a serial port.
 
-## 🧐 What's inside?
+## Usage
 
-A quick look at the files and directories you'll see in a Deno project.
+(not functional, there's no code here yet)
 
-    .
-    ├─ .github
-    │   └─ workflows
-    │       └─ ci.yml
-    ├─ .gitattributes
-    ├─ .gitignore
-    ├─ CHANGELOG.md
-    ├─ LICENSE
-    ├─ mod_test.ts
-    ├─ mod.ts
-    └─ README.md
+Request command with body
 
-1. **`.github\workflows\ci.yml`**: GitHub Actions.
-
-2. **`.gitattributes`**: This file is a simple text file that gives `attributes`
-   to pathnames.
-
-3. **`.gitignore`**: This file tells git which files it should not track / not
-   maintain a version history for.
-
-4. **`CHANGELOG.md`**: This file contains a curated, chronologically ordered
-   list of notable changes for each version of a project. The format is based on
-   [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project
-   adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
-
-5. **`LICENSE`**: Deno is licensed under the MIT license.
-
-6. **`mod.ts`**: Deno's default entry point. The filename mod.ts follows Rust’s
-   convention, is shorter than index.ts, and doesn’t come with any preconceived
-   notions about how it might work. Deno does not treat "index.js" or "index.ts"
-   in a special way. By using these filenames, it suggests that they can be left
-   out of the module specifier when they cannot. This is confusing.
-
-7. **`mod_test.ts`**: Each module should come with its test as a sibling with
-   the name `modulename_test.ts`. For example the module `foo.ts` should come
-   with its sibling `foo_test.ts`.
-
-8. **`README.md`**: A text file containing useful reference information about
-   your project.
+```bash
+deno run mod.ts request '{"endpoint":7,"method":3,"body":{"id":"1","primaryName":"Jacek","altName":"Ziemniak","address":"Jana Czeczota 9 \n 02-607 Warszawa","numbers":["797393115"],"blocked":false,"favourite":false}}'
+```
 
 ## License
 
-[deno_starter](https://github.com/justjavac/deno_starter) is released under the
 MIT License. See the bundled [LICENSE](./LICENSE) file for details.

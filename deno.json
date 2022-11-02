@@ -1,0 +1,32 @@
+{
+  "lint": {
+    "files": {
+      "include": ["src/"]
+    }
+  },
+  "fmt": {
+    "files": {
+      "include": ["src/"]
+    }
+  },
+  "compilerOptions": {
+    "allowJs": true,
+    "module": "esnext",
+    "resolveJsonModule": true,
+    "target": "esnext",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  },
+  "options": {
+    "useTabs": false,
+    "lineWidth": 80,
+    "indentWidth": 2,
+    "singleQuote": true,
+    "proseWrap": "preserve"
+  },
+  "test": {
+    "files": {
+      "include": ["src/"]
+    }
+  }
+}

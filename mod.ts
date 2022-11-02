@@ -1,15 +1,33 @@
 /**
- * Every exported symbol ideally should have a documentation line.
- *
- * It is important that documentation is easily human readable,
- * but there is also a need to provide additional styling information to ensure
- * generated documentation is more rich text.
- * Therefore JSDoc should generally follow markdown markup to enrich the text.
- *
- * follow https://deno.land/manual/contributing/style_guide
- *
  * @param foo - Description of non obvious parameter
  */
+
+import yargs from 'yargs/deno.ts'
+import { Arguments } from 'yargs/deno-types.ts'
+// import request from "./request.js"
+
+yargs(Deno.args)
+  .command(
+    "request <request-config-string>",
+    "This command allows you to send a single request to the Pure phone",
+    (yargs: Argv) => {
+    return yargs.positional('requestConfigString', {
+      describe: "it's a stringified RequestConfig, where definition is in pure/src/device.types.ts",
+      type: "string",
+    })
+  }, (argv: Arguments) => {
+    console.info(argv)
+    //request
+  })
+  .option('verbose', {
+    alias: 'v',
+    type: 'boolean',
+    description: 'Run with verbose logging'
+  })
+  .strictCommands()
+  .demandCommand(1)
+  .parse()
+
 export default function starter(foo: string): string {
   return foo;
 }
